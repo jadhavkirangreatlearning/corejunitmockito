@@ -15,6 +15,11 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeServiceImpl;
 
+
+    @GetMapping("/say")
+    public String sayHello(){
+        return "Welcome to fintech csi pune";
+    }
     @PostMapping("/signup")
     public ResponseEntity<Employee> signUp(@RequestBody Employee employee){
         return ResponseEntity.ok(employeeServiceImpl.saveData(employee));
